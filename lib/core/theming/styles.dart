@@ -10,7 +10,7 @@ class Styles {
   static TextStyle textStyle12 =
       TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400);
   static TextStyle textStyle16 =
-      TextStyle(fontSize: 16.sp, fontWeight: FontWeight.normal);
+      TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500);
   static TextStyle textStyle24 =
       TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w700);
   static TextStyle textStyle25 =
