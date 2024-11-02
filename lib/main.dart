@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:payment/payment_app.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const PaymentApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
