@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:payment/features/checkout/ui/my_cart_view.dart';
 
 class PaymentApp extends StatelessWidget {
@@ -6,9 +7,13 @@ class PaymentApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyCartView(),
+    return const ScreenUtilInit(
+      designSize: ScreenUtil.defaultSize,
+      minTextAdapt: true,
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyCartView(),
+      ),
     );
   }
 }
