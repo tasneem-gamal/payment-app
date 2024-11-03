@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:payment/core/theming/styles.dart';
 import 'package:payment/features/checkout/ui/widgets/cart_image.dart';
 import 'package:payment/features/checkout/ui/widgets/custom_app_bar.dart';
+import 'package:payment/core/widgets/custom_button.dart';
 import 'package:payment/features/checkout/ui/widgets/order_info.dart';
 import 'package:payment/features/checkout/ui/widgets/total_price.dart';
 
@@ -43,28 +43,12 @@ class MyCartViewBody extends StatelessWidget {
             subText: '\$80',
           ),
           SizedBox(height: 8.h,),
-          SizedBox(
-            width: double.infinity,
-            height: 55.h,
-            child: ElevatedButton(
-              onPressed: (){}, 
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12)
-                )
-              ),
-              child: Text(
-                'Complete payment',
-                style: Styles.textStyle16.copyWith(
-                  color: Colors.white,
-                ),
-              )
-            ),
-          )
+          const CustomButton()
         ],
       ),
     );
   }
 }
+
+
 
