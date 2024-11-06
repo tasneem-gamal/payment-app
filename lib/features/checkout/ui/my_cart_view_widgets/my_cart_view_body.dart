@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:payment/core/theming/styles.dart';
-import 'package:payment/features/checkout/ui/widgets/cart_image.dart';
-import 'package:payment/features/checkout/ui/widgets/custom_app_bar.dart';
-import 'package:payment/features/checkout/ui/widgets/order_info.dart';
-import 'package:payment/features/checkout/ui/widgets/total_price.dart';
+import 'package:payment/core/widgets/constants.dart';
+import 'package:payment/features/checkout/ui/my_cart_view_widgets/cart_image.dart';
+import 'package:payment/core/widgets/custom_app_bar.dart';
+import 'package:payment/core/widgets/custom_button.dart';
+import 'package:payment/features/checkout/ui/my_cart_view_widgets/order_info.dart';
+import 'package:payment/features/checkout/ui/my_cart_view_widgets/total_price.dart';
+import 'package:payment/features/checkout/ui/payment_details_view.dart';
 
 class MyCartViewBody extends StatelessWidget {
   const MyCartViewBody({super.key});
@@ -12,10 +14,12 @@ class MyCartViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 20.h),
+      padding: Constants.checkoutPadding,
       child: Column(
         children: [
-          const CustomAppBar(),
+          const CustomAppBar(
+            text: 'My Cart',
+          ),
           const CartImage(),
           const OrderInfo(
             text: 'Order Subtotal',
@@ -43,28 +47,21 @@ class MyCartViewBody extends StatelessWidget {
             subText: '\$80',
           ),
           SizedBox(height: 8.h,),
-          SizedBox(
-            width: double.infinity,
-            height: 55.h,
-            child: ElevatedButton(
-              onPressed: (){}, 
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12)
+          CustomButton(
+            onPressed: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => const PaymentDetailsView()
                 )
-              ),
-              child: Text(
-                'Complete payment',
-                style: Styles.textStyle16.copyWith(
-                  color: Colors.white,
-                ),
-              )
-            ),
+              );
+            },
           )
         ],
       ),
     );
   }
 }
+
+
 

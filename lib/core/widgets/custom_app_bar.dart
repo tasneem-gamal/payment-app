@@ -3,9 +3,9 @@ import 'package:payment/core/theming/styles.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
-    super.key,
+    super.key, required this.text,
   });
-
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget {
         ),
         const Spacer(),
         Text(
-          'My Cart',
+          text,
           style: Styles.textStyle25
         ),
         const Spacer(),
