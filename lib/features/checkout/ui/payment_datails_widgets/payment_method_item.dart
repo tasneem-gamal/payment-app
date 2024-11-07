@@ -4,23 +4,28 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class PaymentMethodItem extends StatelessWidget {
   const PaymentMethodItem({
     super.key,
+    this.isActive = false
   });
-
+  final bool isActive;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      duration: const Duration(microseconds: 600),
       width: 103.w,
       height: 62.h,
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 1.50, color: Color(0xff34A853)),
+          side: BorderSide(
+            width: 1.50, 
+            color: isActive ? const Color(0xff34A853) : const Color.fromARGB(255, 100, 99, 99)
+          ),
           borderRadius: BorderRadius.circular(15)
         ),
-        shadows: const [
+        shadows: [
           BoxShadow(
-            color: Color(0xff34A853),
+            color: isActive ? const Color(0xff34A853) : Colors.white,
             blurRadius: 4,
-            offset: Offset(0, 0),
+            offset: const Offset(0, 0),
             spreadRadius: 0
           )
         ]

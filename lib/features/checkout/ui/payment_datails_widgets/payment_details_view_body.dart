@@ -16,7 +16,7 @@ class PaymentDetailsViewBody extends StatelessWidget {
         children: [
           const CustomAppBar(text: 'Payment Details'),
           SizedBox(height: 24.h,),
-          PaymentMethodItem()
+          PaymentMethodItem(isActive: false,)
         ],
       ),
     );
