@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:payment/core/widgets/constants.dart';
 import 'package:payment/features/checkout/ui/my_cart_view_widgets/cart_image.dart';
-import 'package:payment/features/checkout/ui/my_cart_view_widgets/custom_app_bar.dart';
+import 'package:payment/core/widgets/custom_app_bar.dart';
 import 'package:payment/core/widgets/custom_button.dart';
 import 'package:payment/features/checkout/ui/my_cart_view_widgets/order_info.dart';
 import 'package:payment/features/checkout/ui/my_cart_view_widgets/total_price.dart';
@@ -17,7 +17,9 @@ class MyCartViewBody extends StatelessWidget {
       padding: Constants.checkoutPadding,
       child: Column(
         children: [
-          const CustomAppBar(),
+          const CustomAppBar(
+            text: 'My Cart',
+          ),
           const CartImage(),
           const OrderInfo(
             text: 'Order Subtotal',
