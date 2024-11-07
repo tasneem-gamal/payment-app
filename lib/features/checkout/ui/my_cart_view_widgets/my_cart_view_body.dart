@@ -6,6 +6,7 @@ import 'package:payment/features/checkout/ui/my_cart_view_widgets/custom_app_bar
 import 'package:payment/core/widgets/custom_button.dart';
 import 'package:payment/features/checkout/ui/my_cart_view_widgets/order_info.dart';
 import 'package:payment/features/checkout/ui/my_cart_view_widgets/total_price.dart';
+import 'package:payment/features/checkout/ui/payment_details_view.dart';
 
 class MyCartViewBody extends StatelessWidget {
   const MyCartViewBody({super.key});
@@ -44,7 +45,16 @@ class MyCartViewBody extends StatelessWidget {
             subText: '\$80',
           ),
           SizedBox(height: 8.h,),
-          const CustomButton()
+          CustomButton(
+            onPressed: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => const PaymentDetailsView()
+                )
+              );
+            },
+          )
         ],
       ),
     );
