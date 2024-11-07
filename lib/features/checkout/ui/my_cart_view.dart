@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payment/features/checkout/ui/widgets/my_cart_view_body.dart';
+import 'package:payment/features/checkout/ui/my_cart_view_widgets/my_cart_view_body.dart';
 
 class MyCartView extends StatelessWidget {
   const MyCartView({super.key});
