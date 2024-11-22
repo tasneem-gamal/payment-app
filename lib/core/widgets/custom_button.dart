@@ -4,8 +4,9 @@ import 'package:payment/core/theming/styles.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
-    super.key, this.onPressed,
+    super.key, this.onPressed, required this.title,
   });
+  final String title;
   final Function()? onPressed;
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class CustomButton extends StatelessWidget {
           )
         ),
         child: Text(
-          'Complete payment',
+          title,
           style: Styles.textStyle16.copyWith(
             color: Colors.white,
           ),
