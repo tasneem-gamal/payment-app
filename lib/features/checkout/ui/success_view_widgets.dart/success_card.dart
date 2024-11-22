@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payment/core/theming/styles.dart';
+import 'package:payment/features/checkout/ui/my_cart_view_widgets/total_price.dart';
 import 'package:payment/features/checkout/ui/success_view_widgets.dart/pay_item_info.dart';
 
 class SuccessCard extends StatelessWidget {
@@ -36,7 +37,12 @@ class SuccessCard extends StatelessWidget {
             const SizedBox(height: 20,),
             const PayItemInfo(title: 'Time', subTitle: '03:00 pm',),
             const SizedBox(height: 20,),
-            const PayItemInfo(title: 'To', subTitle: 'Jamila Awad',)
+            const PayItemInfo(title: 'To', subTitle: 'Jamila Awad',),
+            const Divider(
+              height: 60,
+              thickness: 2,
+            ),
+            const TotalPrice(text: 'Total', subText: r'$500')
           ],
         ),
       ),
