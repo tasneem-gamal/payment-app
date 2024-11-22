@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:payment/core/widgets/constants.dart';
 import 'package:payment/core/widgets/custom_app_bar.dart';
+import 'package:payment/features/checkout/ui/payment_datails_widgets/custom_credit_card.dart';
 import 'package:payment/features/checkout/ui/payment_datails_widgets/payment_methods_list_view.dart';
 
 class PaymentDetailsViewBody extends StatelessWidget {
@@ -16,7 +17,9 @@ class PaymentDetailsViewBody extends StatelessWidget {
         children: [
           const CustomAppBar(text: 'Payment Details'),
           SizedBox(height: 24.h,),
-          PaymentMethodsListView()
+          const PaymentMethodsListView(),
+          SizedBox(height: 16.h,),
+          const CustomCreditCard()
         ],
       ),
     );
