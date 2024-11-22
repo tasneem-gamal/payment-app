@@ -12,15 +12,17 @@ class PaymentDetailsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: Constants.checkoutPadding,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const CustomAppBar(text: 'Payment Details'),
-          SizedBox(height: 24.h,),
-          const PaymentMethodsListView(),
-          SizedBox(height: 16.h,),
-          const CustomCreditCard()
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const CustomAppBar(text: 'Payment Details'),
+            SizedBox(height: 24.h,),
+            const PaymentMethodsListView(),
+            SizedBox(height: 16.h,),
+            const CustomCreditCard()
+          ],
+        ),
       ),
     );
   }

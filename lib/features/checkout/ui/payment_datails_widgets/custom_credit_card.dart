@@ -10,7 +10,7 @@ class CustomCreditCard extends StatefulWidget {
 
 class _CustomCreditCardState extends State<CustomCreditCard> {
   String cardNumber= '', expiryDate = '', cardHolderName = '', cvvCode = '';
-
+  final GlobalKey<FormState> formKey = GlobalKey();
   bool showBackView = false;
 
   @override
@@ -21,10 +21,26 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
           cardNumber: cardNumber, 
           expiryDate: expiryDate, 
           cardHolderName: cardHolderName, 
+          isHolderNameVisible: true,
           cvvCode: cvvCode, 
           showBackView: showBackView, 
           onCreditCardWidgetChange: (value){},
           padding: 0,
+        ),
+        CreditCardForm(
+          cardNumber: cardNumber, 
+          expiryDate: expiryDate, 
+          cardHolderName: cardHolderName, 
+          cvvCode: cvvCode, 
+          onCreditCardModelChange: (creditCardModel){
+            cardNumber = creditCardModel.cardNumber;
+            expiryDate = creditCardModel.expiryDate;
+            cardHolderName = creditCardModel.cardHolderName;
+            cvvCode = creditCardModel.cvvCode;
+            showBackView = creditCardModel.isCvvFocused;
+            setState(() {});
+          }, 
+          formKey: formKey
         )
       ],
     );
