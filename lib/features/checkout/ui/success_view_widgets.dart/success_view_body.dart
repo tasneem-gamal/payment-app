@@ -33,6 +33,26 @@ class SuccessViewBody extends StatelessWidget {
               backgroundColor: Colors.white,
             )
           ),
+          Positioned(
+            bottom: MediaQuery.sizeOf(context).height * 0.2 + 20,
+            right: 28,
+            left: 28,
+            child: Row(
+              children:
+                List.generate(
+                  30, 
+                  (index) => Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 2),
+                      child: Container(
+                        height: 2,
+                        color: const Color(0xffB8B8B8),
+                      ),
+                    )
+                  )
+                )
+            )
+          ),
           const Positioned(
             top: -50,
             left: 0,
