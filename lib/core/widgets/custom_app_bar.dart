@@ -11,7 +11,9 @@ class CustomAppBar extends StatelessWidget {
     return Row(
       children: [
         IconButton(
-          onPressed: (){}, 
+          onPressed: (){
+            Navigator.pop(context);
+          }, 
           icon: const Icon(Icons.arrow_back, size: 30, color: Colors.black,)
         ),
         const Spacer(),
