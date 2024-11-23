@@ -15,6 +15,7 @@ class PaymentDetailsViewBody extends StatefulWidget {
 
 class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
   final GlobalKey<FormState> formKey = GlobalKey();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,7 +26,10 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
             SliverToBoxAdapter(child: SizedBox(height: 24.h,)),
             const SliverToBoxAdapter(child: PaymentMethodsListView()),
             SliverToBoxAdapter(child: SizedBox(height: 16.h,)),
-            SliverToBoxAdapter(child: CustomCreditCard(formKey: formKey,)),
+            SliverToBoxAdapter(child: CustomCreditCard(
+              formKey: formKey,
+              autovalidateMode: autovalidateMode,
+            )),
             SliverToBoxAdapter(child: SizedBox(height: 50.h,)),
             SliverFillRemaining(
               child: Align(
@@ -34,7 +38,14 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
                   padding: EdgeInsets.only(bottom: 12.h),
                   child: CustomButton(
                     title: 'Pay',
-                    onPressed: (){},
+                    onPressed: (){
+                      if(formKey.currentState!.validate()){
+                        formKey.currentState!.save();
+                      } else {
+                        autovalidateMode = AutovalidateMode.always;
+                        setState(() {});
+                      }
+                    },
                   ),
                 ),
               ),
