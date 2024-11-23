@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:payment/core/theming/styles.dart';
 import 'package:payment/features/checkout/ui/my_cart_view_widgets/total_price.dart';
+import 'package:payment/features/checkout/ui/success_view_widgets.dart/bar_code_paid.dart';
+import 'package:payment/features/checkout/ui/success_view_widgets.dart/card_info_widget.dart';
 import 'package:payment/features/checkout/ui/success_view_widgets.dart/pay_item_info.dart';
 
 class SuccessCard extends StatelessWidget {
@@ -42,10 +44,20 @@ class SuccessCard extends StatelessWidget {
               height: 60,
               thickness: 2,
             ),
-            const TotalPrice(text: 'Total', subText: r'$500')
+            const TotalPrice(text: 'Total', subText: r'$500'),
+            const SizedBox(height: 30,),
+            const CardInfoWidget(),
+            const Spacer(),
+            const BarCodePaid(),
+            SizedBox(
+              height: ((MediaQuery.sizeOf(context).height * 0.2 + 20) / 2) - 29
+            )
           ],
         ),
       ),
     );
   }
 }
+
+
+
