@@ -5,8 +5,8 @@ import 'package:payment/features/checkout/ui/my_cart_view_widgets/cart_image.dar
 import 'package:payment/core/widgets/custom_app_bar.dart';
 import 'package:payment/core/widgets/custom_button.dart';
 import 'package:payment/features/checkout/ui/my_cart_view_widgets/order_info.dart';
+import 'package:payment/features/checkout/ui/my_cart_view_widgets/payment_modal_sheet.dart';
 import 'package:payment/features/checkout/ui/my_cart_view_widgets/total_price.dart';
-import 'package:payment/features/checkout/ui/payment_details_view.dart';
 
 class MyCartViewBody extends StatelessWidget {
   const MyCartViewBody({super.key});
@@ -50,11 +50,16 @@ class MyCartViewBody extends StatelessWidget {
           CustomButton(
             title: 'Complete payment',
             onPressed: (){
-              Navigator.push(
-                context, 
-                MaterialPageRoute(
-                  builder: (context) => const PaymentDetailsView()
-                )
+              // Navigator.push(
+              //   context, 
+              //   MaterialPageRoute(
+              //     builder: (context) => const PaymentDetailsView()
+              //   )
+              // );
+
+              showModalBottomSheet(
+                context: context, 
+                builder: (context) => const PaymentModalSheet()
               );
             },
           )
