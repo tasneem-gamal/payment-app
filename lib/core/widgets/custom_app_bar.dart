@@ -3,9 +3,9 @@ import 'package:payment/core/theming/styles.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
-    super.key, required this.text,
+    super.key, this.text,
   });
-  final String text;
+  final String? text;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget {
         ),
         const Spacer(),
         Text(
-          text,
+          text ?? '',
           style: Styles.textStyle25
         ),
         const Spacer(),
